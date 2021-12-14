@@ -39,7 +39,7 @@ export default {
     let config = {
       xhrSetup(xhr, url) {
         if (url.indexOf('ThisIsASecret') === -1) return;
-        url = 'http://localhost:8082/decrypt';
+        url = `${process.env.VUE_APP_BASEURL}/decrypt`;
         xhr.withCredentials = true;
         xhr.open('GET', url);
       }
@@ -59,7 +59,6 @@ export default {
       this.player.src = '';
     }
     if (this.flvPlayer) {
-      console.log('destroy')
       this.flvPlayer.unload();
       this.flvPlayer.detachMediaElement();
       this.flvPlayer.destroy();

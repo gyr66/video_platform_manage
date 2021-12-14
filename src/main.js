@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.use(vueWechatTitle)
 
+
 new Vue({
   render: h => h(App),
   router, store

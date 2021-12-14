@@ -9,7 +9,7 @@
       <el-table-column align="center" label="视频缩略图">
         <template slot-scope="scope">
           <el-upload
-            action="http://localhost:8082/video/updateThumbnail"
+            :action="uploadUrl"
             :show-file-list="false"
             :before-upload="beforeThumbnailUpload"
             :on-success="handleThumbnailUploadSuccess"
@@ -135,7 +135,8 @@ export default {
       filterCommitted: [],
       tableLoading: false,
       sortProp: 'name',
-      sortOrder: 'asc'
+      sortOrder: 'asc',
+      uploadUrl: `${process.env.VUE_APP_BASEURL}/video/updateThumbnail`
     }
   },
   created() {

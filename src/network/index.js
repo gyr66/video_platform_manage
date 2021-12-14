@@ -6,7 +6,7 @@ import router from "@/router";
 const network = axios.create({
   // 请求超时时间
   timeout: 3000,
-  baseURL: 'http://localhost:8082',
+  baseURL: process.env.VUE_APP_BASEURL,
   withCredentials: true
 })
 

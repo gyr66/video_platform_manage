@@ -80,7 +80,7 @@ export default {
       }).on('error', (error) => {
         console.error(error)
       }).use(Tus, {
-        endpoint: 'http://localhost:8082/upload',
+        endpoint: `${process.env.VUE_APP_BASEURL}/upload`,
         withCredentials: true,
         retryDelays: [0, 1000, 3000, 5000],
         removeFingerprintOnSuccess: true
